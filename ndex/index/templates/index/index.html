@@ -1,0 +1,38 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>nDex</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+
+  <link rel="stylesheet" href="{% static "css/styles.min.css" %}">
+  <link rel="stylesheet" href="{% static "css/index.css" %}">
+</head>
+
+<body class="bg-grey-lightest font-serif leading-normal tracking-normal">
+	<div class="container mx-auto">
+		<div class="title mx-auto pt-5 text-center w-6/6 text-2xl mb-1">
+			<h1> nDex </h1>
+			<h3>
+				${{ index_price }}
+			</h3>
+		</div>
+		<section class="flex items-center justify-center h-screen">
+			<div class="bg-blue-500 w-2/4">
+				{% for bank in banks %}
+					<p> {{bank.ticker}} </p>
+					<p> {{bank.ncino_weight}} </p>
+					<p> {{bank.last_price}} </p>
+				{% endfor %} 
+			</div>
+		</section>
+	</div>
+</body>
+</html>

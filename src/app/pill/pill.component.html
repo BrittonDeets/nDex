@@ -1,0 +1,8 @@
+<p 
+	class="rounded-full mx-auto px-2" 
+	[ngClass]="{
+		'bg-profit': change > 0,
+		'bg-loss': change < 0}"
+>
+	{{change}}%
+</p>

@@ -7,6 +7,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 	title = 'ndex';
+	price = 254.23;
+	change = 2.75;
+	stocks = [
+		{
+			ticker: 'AAPL',
+			price: 243.56,
+			change: 3,
+			weight: 5
+		},
+		{
+			ticker: 'AAPL',
+			price: 243.56,
+			change: 55.55,
+			weight: 55.55
+		},
+		{
+			ticker: 'AAPL',
+			price: 243.56,
+			change: -10,
+			weight: 5
+		},
+		{
+			ticker: 'AAPL',
+			price: 243.56,
+			change: 3,
+			weight: 5
+		}
+	];
 
 	ngOnInit() {
 	}

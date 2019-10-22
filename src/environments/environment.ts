@@ -4,7 +4,9 @@
 
 export const environment = {
 	production: false,
-	AV_API_KEY: '1XFCN62HORMXYKSL'
+	AV_API_KEY: '-',
+	AWS_KEY_ID: '-',
+	AWS_SECRET_KEY: '-'
 };
 
 /*

@@ -3,6 +3,7 @@ import { Subject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import * as alphavantage from 'alphavantage';
 
+
 @Injectable({
 	providedIn: 'root'
 })

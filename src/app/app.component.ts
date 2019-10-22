@@ -1,3 +1,4 @@
+import { StockService } from './services/stock-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -17,24 +18,35 @@ export class AppComponent implements OnInit {
 			weight: 5
 		},
 		{
-			ticker: 'AAPL',
+			ticker: 'BAC',
 			price: 243.56,
 			change: 55.55,
 			weight: 55.55
 		},
 		{
-			ticker: 'AAPL',
+			ticker: 'TSLA',
 			price: 243.56,
 			change: -10,
 			weight: 5
 		},
 		{
-			ticker: 'AAPL',
+			ticker: 'QQQ',
 			price: 243.56,
 			change: 3,
 			weight: 5
 		}
 	];
+
+	constructor(private stockService: StockService) {
+		for (let stock of this.stocks) {
+			this.stockService.getPrices(stock.ticker).subscribe(
+				data => {
+					stock.price = data.price.toFixed(2);
+					stock.change = data.change.toFixed(2);
+				}
+			);
+		}
+	}
 
 	ngOnInit() {
 	}
